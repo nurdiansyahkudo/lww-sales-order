@@ -16,7 +16,7 @@
                                 </div>
                                 <div class="row">
                                     <h1 style="font-size: 1.5rem;">
-                                        <strong><span t-esc=""/></strong>
+                                        <strong><span t-esc="o.project_id.name"/></strong>
                                     </h1>
                                 </div>
                             </div>
