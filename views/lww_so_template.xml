@@ -41,7 +41,7 @@
                             <!-- Address Section -->
                             <div class="row" style="margin-bottom: 5px; margin-top: 10px; border-bottom: 2px solid #35bdaf">
                                 <div class="col-6 text-left">
-                                    <strong style="font-size: 16px; margin-left: 5rem;">To: </strong>
+                                    <strong style="font-size: 16px; margin-left: 5rem;">Sold To: </strong>
                                     <div class='row'>
                                         <div class='col-3'>
                                             <p style='text-align: left; font-size: 16px;'><em>Name: </em></p>
