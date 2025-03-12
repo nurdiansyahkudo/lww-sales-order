@@ -237,6 +237,7 @@
                                                     <td class="text-center" style="font-size: 15px;"><span t-esc="o.currency_id.name or ''" style="font-size: 15px;"/></td>
                                                 </tr>
                                             </t>
+                                        </t>
                                     </tbody>
                                 </table>
                             </div>
