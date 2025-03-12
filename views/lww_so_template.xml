@@ -189,7 +189,7 @@
                                 </table>
                             </div>
                             <!-- Table Product -->
-                            <t t-set="lines_to_report" t-value="doc._get_order_lines_to_report()"/>
+                            <t t-set="lines_to_report" t-value="o._get_order_lines_to_report()"/>
                             <div class="row" style="margin-bottom: 5px; margin-top: 10px;">
                                 <table class="table table-sm" style="margin-bottom: 5px; border: 0.5px;">
                                     <thead style="border: 0.5px;">
