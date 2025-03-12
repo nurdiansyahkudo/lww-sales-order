@@ -189,6 +189,7 @@
                                 </table>
                             </div>
                             <!-- Table Product -->
+                            <t t-set="lines_to_report" t-value="doc._get_order_lines_to_report()"/>
                             <div class="row" style="margin-bottom: 5px; margin-top: 10px;">
                                 <table class="table table-sm" style="margin-bottom: 5px; border: 0.5px;">
                                     <thead style="border: 0.5px;">
@@ -206,15 +207,21 @@
                                     </thead>
                                     <tbody style="border: none;">
                                         <t t-set="counter" t-value="0"/>
-                                        <t t-foreach="o.order_line" t-as="line">
+                                        <t t-foreach="lines_to_report" t-as="line">
                                             <t t-set="counter" t-value="counter + 1"/>
-                                            <tr>
+                                            <tr t-att-class="'fw-bold o_line_section' if (
+                                                    line.display_type == 'line_section'
+                                                    or line.product_type == 'combo'
+                                                )
+                                                else 'fst-italic o_line_note' if line.display_type == 'line_note'
+                                                else ''"
+                                            >
                                             <!-- No -->
                                                 <td class="text-center" style="font-weight: bold;"><span t-esc="counter" style="font-weight: bold; text-align: center;"/></td>
                                             <!-- Part Number -->
-                                                <td class="text-center" style="font-size: 15px;"><span t-esc="line.product_id.name or ''" style="font-size: 15px;"/></td>
+                                                <td class="text-center" style="font-size: 15px;"><span t-esc="line.name or ''" style="font-size: 15px;"/></td>
                                             <!-- Product Name -->
-                                                <td class="text-center" style="font-size: 15px;"><span t-esc="line.product_id.name or ''" style="font-size: 15px;"/></td>
+                                                <td class="text-center" style="font-size: 15px;"><span t-esc="line.name or ''" style="font-size: 15px;"/></td>
                                             <!-- QTY -->
                                                 <td class="text-center" style="font-size: 15px;"><span t-esc="int(line.product_uom_qty) or ''" style="font-size: 15px;"/></td>
                                             <!-- Unit -->
