@@ -64,7 +64,7 @@
 
         <!-- LIMAWIRA -->
         <record id="action_report_limawira_so" model="ir.actions.report">
-            <field name="name">Print PO</field>
+            <field name="name">Print SO</field>
             <field name="model">sale.order</field>
             <field name="report_name">lww_sales.lww_so_template</field>
             <field name="report_file">lww_sales.lww_so_template</field>
@@ -78,7 +78,7 @@
 
         <!-- BINA SERVICE -->
         <record id="action_report_bs_so" model="ir.actions.report">
-            <field name="name">Print PO Bina Service</field>
+            <field name="name">Print SO Bina Service</field>
             <field name="model">sale.order</field>
             <field name="report_name">lww_sales.bs_so_template</field>
             <field name="report_file">lww_sales.bs_so_template</field>
@@ -92,7 +92,7 @@
 
         <!-- SPARTADUA RIBUJAYA -->
         <record id="action_report_spartadua_so" model="ir.actions.report">
-            <field name="name">Print PO Spartadua</field>
+            <field name="name">Print SO Spartadua</field>
             <field name="model">sale.order</field>
             <field name="report_name">lww_sales.spartadua_so_template</field>
             <field name="report_file">lww_sales.spartadua_so_template</field>
