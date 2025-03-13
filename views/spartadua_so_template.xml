@@ -50,7 +50,7 @@
                     <main>
                         <div class="page" style="padding: 1px;">
                             <!-- Supplier Section -->
-                            <div class="row" style="margin-bottom: 5px; font-size: 16px; margin-top: 5px;">
+                            <div class="row" style="margin-bottom: 5px; font-size: 16px; margin-top: 10px;">
                                 <div class="col-6">
                                     <table class="table table-sm" style="margin-bottom: 5px; border: 1px solid;">
                                         <tr>
