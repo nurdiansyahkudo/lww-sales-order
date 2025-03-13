@@ -7,7 +7,7 @@
                 <t t-foreach="docs" t-as="o">
                     <!-- Header Section -->
                     <div class="row">
-                        <div class="col-4" style="height: 100px; display: flex; flex-direction: column; justify-content: center; padding-top: 50px;">
+                        <div class="col-4" style="height: 150px; display: flex; flex-direction: column; justify-content: center; padding-top: 50px;">
                             <div style="font-size: 16px; line-height: 1.5; text-align: left;">
                                 <p style="font-weight: bold; margin-bottom: 2px; font-size: 20px"><span t-esc="o.company_id.name or ''" style="font-weight: bold;"/></p>
                                 <p>
@@ -50,7 +50,7 @@
                     <main>
                         <div class="page" style="padding: 1px;">
                             <!-- Supplier Section -->
-                            <div class="row" style="margin-bottom: 5px; font-size: 16px;">
+                            <div class="row" style="margin-bottom: 5px; font-size: 16px; margin-top: 5px;">
                                 <div class="col-6">
                                     <table class="table table-sm" style="margin-bottom: 5px; border: 1px solid;">
                                         <tr>
