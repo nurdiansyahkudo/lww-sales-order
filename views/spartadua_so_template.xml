@@ -82,7 +82,7 @@
                                                 &amp;nbsp;Contact Person
                                             </td>
                                             <td class="col-9" style="border: 1px solid; border-left: none; border-top: none;">
-                                                : <span t-esc="o.effective_date.strftime('%d-%b-%y') or ''" style="text-align: left; font-size: 16px; margin-left: 3px;"/>
+                                                 : <!-- <span t-esc="o.effective_date.strftime('%d-%b-%y') or ''" style="text-align: left; font-size: 16px; margin-left: 3px;"/> -->
                                             </td>
                                         </tr>
                                     </table>
