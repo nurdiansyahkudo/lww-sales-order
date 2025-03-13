@@ -11,7 +11,7 @@
         'report/lww_sales_report.xml',
         'views/lww_so_template.xml',
         'views/bs_so_template.xml',
-        # 'views/spartadua_so_template.xml',
+        'views/spartadua_so_template.xml',
         # FORM VIEW
         'views/sale_order_view.xml',
     ],
