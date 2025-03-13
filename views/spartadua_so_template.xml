@@ -95,7 +95,7 @@
                                                 &amp;nbsp;Sales order No.
                                             </td>
                                             <td class="col-8" style="border: 1px solid; border-left: none; border-bottom: none;">
-                                                : <span t-esc="o.no_po or '-'" style="text-align: left; font-size: 16px; margin-left: 5px;"/>
+                                                : <span t-esc="(o.name + ' ' + o.no_so) if o.name and o.no_so else (o.name or o.no_so or '')" style="text-align: left; font-size: 16px; margin-left: 5px;"/>
                                             </td>
                                         </tr>
                                         <tr>
