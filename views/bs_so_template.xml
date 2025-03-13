@@ -50,7 +50,7 @@
                                 <table class="table table-sm" style="margin-bottom: 5px; border: 1px solid;">
                                     <tr>
                                         <td class="col-3" style="border: 2px solid;">
-                                            &amp;nbsp;Supplier's Name
+                                            &amp;nbsp;Customer's Name
                                         </td>
                                         <td class="col-9" style="border: 1px solid;">
                                             <span t-esc="o.partner_id.name or '-'" style="text-align: left; font-size: 14px; margin-left: 5px;"/>
