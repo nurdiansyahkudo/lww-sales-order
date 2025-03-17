@@ -159,11 +159,11 @@
                                             <!-- Product Name -->
                                                 <td class="text-center" style="font-size: 15px;"><span t-esc="line.name or '-'" style="font-size: 15px;"/></td>
                                             <!-- Price -->
-                                                <td class="text-right" style="font-size: 15px; text-align: right;"><span t-esc="'{:,.2f}'.format(line.price_unit) or ''" style="font-size: 15px; text-align: right;"/></td>
+                                                <td class="text-center" style="font-size: 15px; text-align: right;"><span t-esc="'{:,.2f}'.format(line.price_unit) or ''" style="font-size: 15px; text-align: right;"/></td>
                                             <!-- QTY -->
                                                 <td class="text-center" style="font-size: 15px; "><span t-esc="int(line.product_uom_qty) or ''" style="font-size: 15px;"/></td>
                                             <!-- Amount -->
-                                                <td class="text-right" style="font-size: 15px; text-align: right;"><span t-esc="'{:,.2f}'.format(line.price_unit * line.product_uom_qty) or ''"  style="font-size: 15px; text-align: right;"/></td>
+                                                <td class="text-center" style="font-size: 15px; text-align: right;"><span t-esc="'{:,.2f}'.format(line.price_unit * line.product_uom_qty) or ''"  style="font-size: 15px; text-align: right;"/></td>
                                             <!-- Remarks -->
                                                 <td class="text-center" style="font-size: 15px;"></td>
                                                 <!-- <td class="text-center" style="font-size: 15px;">
