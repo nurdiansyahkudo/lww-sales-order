@@ -137,10 +137,6 @@
                                             <th style="font-size: 16px; text-align: center; font-weight: bold;">Item</th>
                                             <th style="font-size: 16px; text-align: center; font-weight: bold;">Price</th>
                                             <th style="font-size: 16px; text-align: center; font-weight: bold;">Quantity</th>
-                                            <!-- <th style="font-size: 16px; text-align: center; font-weight: bold;">Unit</th> -->
-                                            <!-- <th style="font-size: 16px; text-align: center; font-weight: bold;">Disc</th> -->
-                                            <!-- <th style="font-size: 16px; text-align: center; font-weight: bold;">Curr</th> -->
-                                            <!-- <th style="font-size: 16px; text-align: center; font-weight: bold;">Rate</th> -->
                                             <th style="font-size: 16px; text-align: center; font-weight: bold;">Amount</th>
                                             <th style="font-size: 16px; text-align: center; font-weight: bold;">Remarks</th>
                                         </tr>
@@ -166,16 +162,8 @@
                                                 <td class="text-right" style="font-size: 15px; text-align: right;"><span t-esc="'{:,.2f}'.format(line.price_unit) or ''" style="font-size: 15px; text-align: right;"/></td>
                                             <!-- QTY -->
                                                 <td class="text-center" style="font-size: 15px; "><span t-esc="int(line.product_uom_qty) or ''" style="font-size: 15px;"/></td>
-                                            <!-- Unit -->
-                                                <!-- <td class="text-center" style="font-size: 15px;"><span t-esc="line.product_uom.name or ''" style="font-size: 15px;"/></td> -->
-                                            <!-- Disc -->
-                                                <!-- <td class="text-center" style="font-size: 15px;"><span t-esc="int(line.discount) or '0'" style="font-size: 15px;"/>%</td> -->
-                                            <!-- Currency -->
-                                                <!-- <td class="text-center" style="font-size: 15px;"><span t-esc="o.currency_id.name or ''" style="font-size: 15px;"/></td> -->
-                                            <!-- Rate -->
-                                                <!-- <td class="text-center" style="font-size: 15px;"></td> -->
                                             <!-- Amount -->
-                                                <td class="text-right" style="font-size: 15px; text-align: right;"><span t-esc="'{:,.2f}'.format(line.price_subtotal) or ''"  style="font-size: 15px; text-align: right;"/></td>
+                                                <td class="text-right" style="font-size: 15px; text-align: right;"><span t-esc="'{:,.2f}'.format(line.price_unit * line.product_uom_qty) or ''"  style="font-size: 15px; text-align: right;"/></td>
                                             <!-- Remarks -->
                                                 <td class="text-center" style="font-size: 15px;"></td>
                                                 <!-- <td class="text-center" style="font-size: 15px;">
@@ -218,7 +206,7 @@
                                         </div>
                                         <div class="col-4">
                                             <p style="font-size: 16px; text-align: right;">
-                                              <span t-esc="'{:,.2f}'.format(o.amount_untaxed)" style="font-size: 16px; text-align: right;"/>
+                                              <span t-esc="'{:,.2f}'.format(line.discount)" style="font-size: 16px; text-align: right;"/>
                                             </p>
                                         </div>
                                     </div>
