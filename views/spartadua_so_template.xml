@@ -206,7 +206,7 @@
                                         </div>
                                         <div class="col-4">
                                             <p style="font-size: 16px; text-align: right;">
-                                              <span t-esc="'{:.0%}'.format(line.discount) if line.dicount else '-'" style="font-size: 16px; text-align: right;"/>
+                                              <span t-esc="'{:.0%}'.format(line.discount) if line.discount else '-'" style="font-size: 16px; text-align: right;"/>
                                             </p>
                                         </div>
                                     </div>
