@@ -66,7 +66,11 @@
                                                 &amp;nbsp;Address
                                             </td>
                                             <td class="col-9" style="border: 1px solid; border-left: none; border-bottom: none; border-top: none;">
-                                                : <span t-esc="o.partner_id.street or '-'" style="text-align: left; font-size: 16px; margin-left: 3px;"/>
+                                                : <p>
+                                                    <span t-esc="o.partner_id.street"/> <br/>
+                                                    <span t-esc="o.partner_id.city"/> <br/>
+                                                    <span t-esc="o.partner_id.state_id.name"/> <span t-esc="o.partner_id.zip"/> <span t-esc="o.partner_id.country_id.name"/><br/>
+                                                </p>
                                             </td>
                                         </tr>
                                         <tr>
