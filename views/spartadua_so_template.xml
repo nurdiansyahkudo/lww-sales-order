@@ -106,14 +106,6 @@
                                                 : <span t-esc="o.date_order.strftime('%d-%b-%y') or ''" style="font-size: 15px;"/>
                                             </td>
                                         </tr>
-                                        <!-- <tr>
-                                            <td class="col-4" style="border: 1px solid; border-top: none; border-bottom: none; border-right: none;">
-                                                &amp;nbsp;PO Type
-                                            </td>
-                                            <td class="col-8" style="border: 1px solid; border-left: none; border-bottom: none; border-top: none;">
-                                                : -
-                                            </td>
-                                        </tr> -->
                                         <tr>
                                             <td class="col-4" style="border: 1px solid; border-top: none; border-right: none;">
                                                 &amp;nbsp;Currency
@@ -196,7 +188,7 @@
                                         </div>
                                         <div class="col-4">
                                             <p style="font-size: 16px; text-align: right;">
-                                              <span t-esc="'{:,.2f}'.format(o.amount_untaxed)" style="font-size: 16px; text-align: right;"/>
+                                              <span t-esc="'{:,.2f}'.format(sum(line.price_unit * line.product_uom_qty for line in lines_to_report))" style="font-size: 16px; text-align: right;"/>
                                             </p>
                                         </div>
                                     </div>
