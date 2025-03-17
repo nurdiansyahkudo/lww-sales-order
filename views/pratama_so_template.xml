@@ -9,13 +9,13 @@
                     <div class="row">
                         <div class="col-4" style="height: 100px; display: flex; flex-direction: column; justify-content: center; padding-top: 50px;">
                             <div style="font-size: 16px; line-height: 1.5; text-align: left;">
-                                <p style="font-weight: bold; margin-bottom: 2px; font-size: 20px"><span t-esc="o.company_id.name or ''" style="font-weight: bold;"/></p>
+                                <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % o.company_id.logo.decode()" 
+                                  style="max-width: 180px; height: auto;" />
                                 <p>
                                     <span t-esc="o.company_id.street"/> <br/>
-                                    <span t-esc="o.company_id.city"/> <br/>
-                                    <span t-esc="o.company_id.state_id.name"/> <span t-esc="o.company_id.zip"/> <span t-esc="o.company_id.country_id.name"/><br/>
-                                    Telepon: <span t-esc="o.company_id.phone"/><br/>
-                                    Fax: <span t-esc="o.company_id.mobile"/>
+                                    <span t-esc="o.company_id.street2"/> <span t-esc="o.company_id.city"/> <br/>
+                                    <span t-esc="o.company_id.state_id.name"/> - <span t-esc="o.company_id.zip"/>
+                                    Telp. <span t-esc="o.company_id.phone"/> Fax. <span t-esc="o.company_id.mobile"/>
                                 </p>
                             </div>
                         </div>
@@ -27,14 +27,7 @@
                             </div>
                         </div>
                         <div class="col-4">
-                            <div class='row' style="text-align: right;">
-                                <div class='col-4'></div>
-                                <div class='col-8'>
-                                    <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % o.company_id.logo.decode()" 
-                                  style="max-width: 180px; height: auto;" />
-                                </div>
-                                
-                            </div>
+                            <div class='row' style="text-align: right;"></div>
                         </div>
                     </div>
                     <!-- Main Section -->
