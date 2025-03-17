@@ -78,14 +78,6 @@
                                                 : <span t-esc="o.partner_id.phone or '-'" style="text-align: left; font-size: 16px; margin-left: 3px;"/> / <span t-esc="o.partner_id.mobile or '-'" style="text-align: left; font-size: 16px; margin-left: 5px;"/>
                                             </td>
                                         </tr>
-                                        <!-- <tr>
-                                            <td class="col-3" style="border: 1px solid; border-top: none; border-right: none;">
-                                                &amp;nbsp;Contact Person
-                                            </td>
-                                            <td class="col-9" style="border: 1px solid; border-left: none; border-top: none;">
-                                                 : <span t-esc="o.effective_date.strftime('%d-%b-%y') or ''" style="text-align: left; font-size: 16px; margin-left: 3px;"/>
-                                            </td>
-                                        </tr> -->
                                     </table>
                                 </div>
                                 &amp;nbsp;
@@ -229,9 +221,9 @@
                                         </div>
                                         <div class="col-4">
                                         <!-- Currency -->
-                                            <p style="font-size: 16px; text-align: left; font-weight: bold;">
+                                            <p style="font-size: 16px; font-weight: bold;">
                                               &amp;nbsp;
-                                              <span t-esc="o.currency_id.name or ''" style="font-size: 16px; text-align: right;"/>&amp;nbsp;
+                                              <span t-esc="o.currency_id.name or ''" style="font-size: 16px; text-align: left;"/>&amp;nbsp;
                                               <span t-esc="'{:,.2f}'.format(o.amount_total)" style="font-size: 16px; text-align: right; margin-left: 2px;"/>
                                             </p>
                                         </div>
