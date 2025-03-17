@@ -222,7 +222,7 @@
                                         <div class="col-1">
                                         <!-- Currency -->
                                             <p style="font-size: 16px; font-weight: bold;">
-                                              <span t-esc="o.currency_id.name or ''" style="font-size: 16px; text-align: left;"/>
+                                              <span t-esc="o.currency_id.name or ''" style="font-size: 16px; text-align: right;"/>
                                             </p>
                                         </div>
                                         <div class="col-3">
