@@ -176,47 +176,47 @@
                                 <div class="col-6" style="margin-top: 10px;">
                                 <!-- Total -->
                                     <div class='row' style="margin-bottom: 5px; margin-top: 5px;">
-                                        <div class="col-8">
+                                        <div class="col-7">
                                             <p style='text-align: right; font-size: 16px;'><em style="font-weight: bold;">Sub Total: </em></p>
                                         </div>
-                                        <div class="col-4">
+                                        <div class="col-5">
                                             <p style="font-size: 16px; text-align: right;">
                                               <span t-esc="'{:,.2f}'.format(sum(line.price_unit * line.product_uom_qty for line in lines_to_report))" style="font-size: 16px; text-align: right;"/>
                                             </p>
                                         </div>
                                     </div>
                                     <div class='row' style="margin-bottom: 5px; margin-top: 5px;">
-                                        <div class="col-8">
+                                        <div class="col-7">
                                             <p style='text-align: right; font-size: 16px;'><em style="font-weight: bold;">Discount: </em></p>
                                         </div>
-                                        <div class="col-4">
+                                        <div class="col-5">
                                             <p style="font-size: 16px; text-align: right;">
                                               <span t-esc="'{:.0f}%'.format(line.discount) if line.discount else '-'" style="font-size: 16px; text-align: right;"/>
                                             </p>
                                         </div>
                                     </div>
                                     <div class='row' style="margin-bottom: 5px; margin-top: 5px;">
-                                        <div class="col-8">
+                                        <div class="col-7">
                                             <p style='text-align: right; font-size: 16px;'><em style="font-weight: bold;">Total After Discount: </em></p>
                                         </div>
-                                        <div class="col-4">
+                                        <div class="col-5">
                                             <p style="font-size: 16px; text-align: right;">
                                               <span t-esc="'{:,.2f}'.format(o.amount_untaxed)" style="font-size: 16px; text-align: right;"/>
                                             </p>
                                         </div>
                                     </div>
                                     <div class='row' style="margin-bottom: 5px; margin-top: 5px;">
-                                        <div class="col-8">
+                                        <div class="col-7">
                                             <p style='text-align: right; font-size: 16px;'><em style="font-weight: bold;">PPN: </em></p>
                                         </div>
-                                        <div class="col-4">
+                                        <div class="col-5">
                                             <p style="font-size: 16px; text-align: right;">
                                               <span t-esc="'{:,.2f}'.format(o.amount_tax)" style="font-size: 16px; text-align: right;"/>
                                             </p>
                                         </div>
                                     </div>
                                     <div class='row' style="margin-bottom: 10px; margin-top: 5px;">
-                                        <div class="col-8">
+                                        <div class="col-7">
                                             <p style='text-align: right; font-size: 16px;'><em style="font-weight: bold;">Total Value: </em></p>
                                         </div>
                                         <div class="col-2">
@@ -226,7 +226,7 @@
                                               <span t-esc="o.currency_id.name or ''" style="font-size: 16px; text-align: left;"/>
                                             </p>
                                         </div>
-                                        <div class="col-2">
+                                        <div class="col-3">
                                             <p style="font-size: 16px; text-align: right; font-weight: bold;">
                                               <span t-esc="'{:,.2f}'.format(o.amount_total)" style="font-size: 16px; text-align: right; margin-left: 2px;"/>
                                             </p>
