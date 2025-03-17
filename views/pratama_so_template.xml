@@ -6,7 +6,7 @@
             <t t-call="web.external_layout">
                 <t t-foreach="docs" t-as="o">
                     <!-- Header Section -->
-                    <div class="row" style="border-bottom: 2px solid rgb(32, 35, 223);">
+                    <div class="row">
                         <div class="col-4" style="height: 150px; display: flex; flex-direction: column; justify-content: center; padding-top: 50px;">
                             <div style="font-size: 16px; line-height: 1.5; text-align: left;">
                                 <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % o.company_id.logo.decode()" 
@@ -22,7 +22,7 @@
                         <div class="col-4"></div>
                         <div class="col-4"></div>
                     </div>
-                    <div class="row">
+                    <div class="row" style="border-bottom: 2px solid rgb(32, 35, 223);">
                         <div class="col-4"></div>
                         <div class="col-4" style="height: 80px; display: flex; flex-direction: column; justify-content: center;">
                             <div class="text" style="font-size: 26px; text-align: center; padding-left: 2.5rem; padding-top: 25px;">
