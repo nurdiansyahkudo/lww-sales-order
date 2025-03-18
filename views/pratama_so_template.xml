@@ -19,7 +19,7 @@
                         </div>
                         <div class="col-7"></div>
                     </div>
-                    <div class="row" style="border-bottom: 2px solid rgb(32, 35, 223); margin-top: 50px; margin-bottom: 20px; padding: 5px;">
+                    <div class="row" style="border-bottom: 2px solid rgb(32, 35, 223); margin-top: 50px; margin-bottom: 30px; padding: 5px;">
                         <div class="col-4"></div>
                         <div class="col-4" style="height: 150px; display: flex; flex-direction: column; justify-content: center;">
                             <div class="row" style="text-align: center; padding-left: 2.5rem;">
