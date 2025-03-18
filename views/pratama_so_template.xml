@@ -19,9 +19,9 @@
                         </div>
                         <div class="col-7"></div>
                     </div>
-                    <div class="row" style="border-bottom: 2px solid rgb(32, 35, 223); margin-top: 80px; margin-bottom: 25px; padding: 5px;">
+                    <div class="row" style="border-bottom: 2px solid rgb(32, 35, 223); padding: 5px;">
                         <div class="col-4"></div>
-                        <div class="col-4" style="height: 150px; display: flex; flex-direction: column; justify-content: center;">
+                        <div class="col-4" style="height: 150px; display: flex; flex-direction: column; justify-content: center; margin-top: 70px;">
                             <div class="row" style="text-align: center; padding-left: 2.5rem;">
                                 <h1 style="font-size: 26px; padding-top: 25px;">
                                     <strong>SALES ORDER</strong>
@@ -32,7 +32,7 @@
                                     No : <span t-esc="(o.name + ' ' + o.no_so) if o.name and o.no_so else (o.name or o.no_so or '')" style="text-align: center; font-size: 16px; margin-left: 5px;"/>
                                 </p>
                             </div>
-                            <div class="row" style="text-align: center; padding-left: 2.5rem;">
+                            <div class="row" style="text-align: center; padding-left: 2.5rem; margin-bottom: 25px;">
                                 <p style="">
                                     Tanggal : <span t-esc="o.date_order.strftime('%d-%b-%y') or ''" style="font-size: 15px;"/>
                                 </p>
