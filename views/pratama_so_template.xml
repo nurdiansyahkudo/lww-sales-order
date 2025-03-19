@@ -141,7 +141,7 @@
                                         <div class="col-12">Pajak</div>
                                     </div>
                                     <div class="row justify-content-end">
-                                        <div class="col-12">Jumlah Keseluruhan</div>
+                                        <div class="col-12">Jumlah termasuk pajak</div>
                                     </div>
                                 </div>
 
@@ -187,7 +187,7 @@
                                 <!-- Signature Section -->
                                 <div class="row" style="margin-bottom: 20px; margin-top: 20px;">
                                     <div class="col-5"></div>
-                                    <div class="col-7">
+                                    <div class="col-7" style="border: 2px solid black;">
                                         <div class="row" style="margin-bottom: 0; margin-top: 0;">
                                             <!-- Kotak TTD Pertama -->
                                             <div class="col-6" style="display: flex; flex-direction: column; align-items: center; padding: 0;">
