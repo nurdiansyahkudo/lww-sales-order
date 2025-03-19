@@ -29,7 +29,7 @@
                             </h1>                                
                             <div style="margin-top: 0; text-align: center; display: flex; justify-content: center; gap: 10px; align-items: center;">
                                 <p style="font-size: 16px; margin: 0; display: inline-block;">No: </p>
-                                <span t-esc="o.no_po or ''" style="font-size: 15px;"/>
+                                <span t-esc="(o.name + ' ' + o.no_so) if o.name and o.no_so else (o.name or o.no_so or '')" style="font-size: 15px;"/>
                             </div>
                             <div style="margin-top: 0; text-align: center; display: flex; justify-content: center; gap: 10px; align-items: center;">
                                 <p style="font-size: 16px; margin-bottom: 10px; display: inline-block;">Tanggal: </p> 
