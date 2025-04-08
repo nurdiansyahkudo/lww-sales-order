@@ -109,7 +109,7 @@
                                             <p style='text-align: left; font-size: 16px;'><strong>Delivery Schedule </strong></p>
                                         </div>
                                         <div class='col-8' style='font-size: 16px; border: 1px; text-align: left; margin-left: 10px;'>
-                                            <span t-esc="o.commitment_date.strftime('%d-%b-%y')"/> Time <span t-esc="o.commitment_date.strftime('%H:%M:%S')"/>
+                                            <span t-esc="o.commitment_date.strftime('%d-%b-%y')"/> Time <span t-esc="o.commitment_date.strftime('%H:%M')"/>
                                         </div>
                                     </div>
                                     <div class='row'>
