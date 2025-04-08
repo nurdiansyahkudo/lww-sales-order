@@ -87,6 +87,56 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-6 text-right">
+                                    <div class='row'>
+                                        <div class='col-4'>
+                                            <p style='text-align: left; font-size: 16px;'><strong>Attachment </strong></p>
+                                        </div>
+                                        <div class='col-8' style='font-size: 16px; border: 1px; text-align: left; margin-left: 10px;'>
+                                            <span />
+                                        </div>
+                                    </div>
+                                    <div class='row'>
+                                        <div class='col-4'>
+                                            <p style='text-align: left; font-size: 16px;'><strong>Project </strong></p>
+                                        </div>
+                                        <div class='col-8' style='font-size: 16px; border: 1px; text-align: left; margin-left: 10px;'>
+                                            <span t-esc="o.project_id.name or ''"/>
+                                        </div>
+                                    </div>
+                                    <div class='row'>
+                                        <div class='col-4'>
+                                            <p style='text-align: left; font-size: 16px;'><strong>Delivery Schedule </strong></p>
+                                        </div>
+                                        <div class='col-8' style='font-size: 16px; border: 1px; text-align: left; margin-left: 10px;'>
+                                            <span t-esc="o.commitment_date.strftime('%d-%b-%y')"/>
+                                        </div>
+                                    </div>
+                                    <div class='row'>
+                                        <div class='col-4'>
+                                            <p style='text-align: left; font-size: 16px;'><strong>Delivery Location </strong></p>
+                                        </div>
+                                        <div class='col-8' style='font-size: 16px; border: 1px; text-align: left; margin-left: 10px;'>
+                                            <span t-esc="o.warehouse_id.name or ''"/>
+                                        </div>
+                                    </div>
+                                    <div class='row'>
+                                        <div class='col-4'>
+                                            <p style='text-align: left; font-size: 16px;'><strong>Note </strong></p>
+                                        </div>
+                                        <div class='col-8' style='font-size: 16px; border: 1px; text-align: left; margin-left: 10px;'>
+                                            <span />
+                                        </div>
+                                    </div>
+                                    <div class='row'>
+                                        <div class='col-4'>
+                                            <p style='text-align: left; font-size: 16px;'><strong>Sale Order Date </strong></p>
+                                        </div>
+                                        <div class='col-8' style='font-size: 16px; border: 1px; text-align: left; margin-left: 10px;'>
+                                            <span t-esc="o.date_order.strftime('%d-%b-%y')"/>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>                            
                             <!-- Table Product -->
                             <t t-set="lines_to_report" t-value="o._get_order_lines_to_report()"/>
