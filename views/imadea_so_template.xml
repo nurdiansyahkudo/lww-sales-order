@@ -36,39 +36,37 @@
                             <div style="margin-bottom: 10px; margin-top: 10px; border-bottom: 2px solid #205295">
                                 <div class="col-6 text-left">
                                     <div class='row'>
-                                        <div class='col-3'>
+                                        <div class='col-4'>
                                             <p style='text-align: left; font-size: 16px;'><strong>Customer </strong></p>
                                         </div>
-                                        <div class='col-9' style='font-size: 16px; border: 1px;'>
+                                        <div class='col-8' style='font-size: 16px; border: 1px;'>
                                             <span t-esc="(o.partner_id.parent_id.name or o.partner_id.name) if (o.partner_id.parent_id.name or o.partner_id.name) else ''"/>
                                         </div>
                                     </div>
                                     <div class='row'>
-                                        <div class='col-3'>
+                                        <div class='col-4'>
                                             <p style='text-align: left; font-size: 16px;'><strong>Customer Address </strong></p>
                                         </div>
-                                        <div class='col-9' style='font-size: 16px; border: 1px;'>
-                                            <div class='col-9' style='font-size: 16px; border: 1px;'>
-                                                <span t-esc="(o.partner_id.parent_id.street or o.partner_id.street) if (o.partner_id.parent_id.street or o.partner_id.street) else ''"/>
-                                                <span t-esc="' ' + (o.partner_id.parent_id.city or o.partner_id.city) if (o.partner_id.parent_id.city or o.partner_id.city) else ''"/>
-                                                <span t-esc="' ' + (o.partner_id.parent_id.state_id.name or o.partner_id.state_id.name) if (o.partner_id.parent_id.state_id.name or o.partner_id.state_id.name) else ''"/>
-                                                <span t-esc="' ' + (o.partner_id.parent_id.country_id.name or o.partner_id.country_id.name) if (o.partner_id.parent_id.country_id.name or o.partner_id.country_id.name) else ''"/>
-                                            </div>
+                                        <div class='col-8' style='font-size: 16px; border: 1px;'>
+                                            <span t-esc="(o.partner_id.parent_id.street or o.partner_id.street) if (o.partner_id.parent_id.street or o.partner_id.street) else ''"/>
+                                            <span t-esc="' ' + (o.partner_id.parent_id.city or o.partner_id.city) if (o.partner_id.parent_id.city or o.partner_id.city) else ''"/>
+                                            <span t-esc="' ' + (o.partner_id.parent_id.state_id.name or o.partner_id.state_id.name) if (o.partner_id.parent_id.state_id.name or o.partner_id.state_id.name) else ''"/>
+                                            <span t-esc="' ' + (o.partner_id.parent_id.country_id.name or o.partner_id.country_id.name) if (o.partner_id.parent_id.country_id.name or o.partner_id.country_id.name) else ''"/>
                                         </div>
                                     </div>
                                     <div class='row'>
-                                        <div class='col-3'>
+                                        <div class='col-4'>
                                             <p style='text-align: left; font-size: 16px;'><strong>Phone </strong></p>
                                         </div>
-                                        <div class='col-9' style='font-size: 16px; border: 1px;'>
+                                        <div class='col-8' style='font-size: 16px; border: 1px;'>
                                             <span t-esc="(o.partner_id.parent_id.phone or o.partner_id.phone) if (o.partner_id.parent_id.phone or o.partner_id.phone) else ''"/>
                                         </div>
                                     </div>
                                     <div class='row'>
-                                        <div class='col-3'>
+                                        <div class='col-4'>
                                             <p style='text-align: left; font-size: 16px;'><strong>Fax </strong></p>
                                         </div>
-                                        <div class='col-9' style='font-size: 16px; border: 1px;'>
+                                        <div class='col-8' style='font-size: 16px; border: 1px;'>
                                             <span t-esc="(o.partner_id.parent_id.mobile or o.partner_id.mobile) if (o.partner_id.parent_id.mobile or o.partner_id.mobile) else ''"/>
                                         </div>
                                     </div>
