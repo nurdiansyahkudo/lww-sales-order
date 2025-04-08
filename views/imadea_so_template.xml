@@ -20,7 +20,7 @@
                             </div>
                         </div>
                         <div class="col-6">
-                            <div style="font-size: 14px; line-height: 1.5; text-align: left;">
+                            <div style="font-size: 14px; line-height: 3; text-align: right;">
                                 <p style="font-size: 16px; margin: 0; display: inline-block;">SO NO : </p>
                                 <span t-esc="(o.name + ' ' + o.no_so) if o.name and o.no_so else (o.name or o.no_so or '')" style="font-size: 15px;"/>
                             </div>
