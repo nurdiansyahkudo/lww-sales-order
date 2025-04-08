@@ -33,7 +33,7 @@
                     <main>
                         <div class="page">
                             <!-- Address Section -->
-                            <div style="margin-bottom: 10px; margin-top: 10px; border-bottom: 2px solid #205295">
+                            <div class="row" style="margin-bottom: 10px; margin-top: 10px; border-bottom: 2px solid #205295">
                                 <div class="col-6 text-left">
                                     <div class='row'>
                                         <div class='col-4'>
