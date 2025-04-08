@@ -1,10 +1,21 @@
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError
+from datetime import datetime
+import pytz
 
 class SaleOrder(models.Model):
     _inherit = "sale.order"
 
     no_so = fields.Char(string='Sales Order Number', store=True, required=True)
+
+    local_commitment_date = fields.Char(string="Local Commitment Date", compute="_compute_local_commitment_date")
+
+    def _compute_local_commitment_date(self):
+        for order in self:
+            if order.commitment_date:
+                local_tz = pytz.timezone('Asia/Jakarta')
+                local_date = order.commitment_date.astimezone(local_tz)
+                order.local_commitment_date = local_date.strftime('%d-%b-%y %H:%M')
 
     def action_print_report(self):
         company = self.env['res.company'].browse(self.env.company.id)
