@@ -169,7 +169,7 @@
                                                 <!-- Item Name -->
                                                     <td class="text-center" style="font-size: 15px;"><span t-esc="line.product_id.name or ''" style="font-size: 15px;"/></td>
                                                 <!-- Description -->
-                                                    <td class="text-center" style="font-size: 15px;"><span t-esc="line.name or ''" style="font-size: 15px;"/></td>
+                                                    <td name="td_note_line" class="text-center" style="font-size: 15px;"><span t-esc="'line_note' or ''" style="font-size: 15px;"/></td>
                                                 <!-- Unit Price -->
                                                     <td class="text-right" style="font-size: 15px; text-align: right;"><span t-esc="'{:,.2f}'.format(line.price_unit) or ''" style="font-size: 15px; text-align: right;"/></td>
                                                 <!-- QTY -->
