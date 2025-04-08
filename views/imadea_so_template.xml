@@ -70,6 +70,22 @@
                                             <span t-esc="(o.partner_id.parent_id.mobile or o.partner_id.mobile) if (o.partner_id.parent_id.mobile or o.partner_id.mobile) else ''"/>
                                         </div>
                                     </div>
+                                    <div class='row'>
+                                        <div class='col-4'>
+                                            <p style='text-align: left; font-size: 16px;'><strong>Contact Person </strong></p>
+                                        </div>
+                                        <div class='col-8' style='font-size: 16px; border: 1px; text-align: left; margin-left: 10px;'>
+                                            <span t-esc="o.partner_id.name or ''"/>
+                                        </div>
+                                    </div>
+                                    <div class='row'>
+                                        <div class='col-4'>
+                                            <p style='text-align: left; font-size: 16px;'><strong>Email </strong></p>
+                                        </div>
+                                        <div class='col-8' style='font-size: 16px; border: 1px; text-align: left; margin-left: 10px;'>
+                                            <span t-esc="o.partner_id.email ''"/>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>                            
                             <!-- Table Product -->
