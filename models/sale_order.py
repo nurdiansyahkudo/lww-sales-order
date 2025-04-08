@@ -8,7 +8,7 @@ class SaleOrder(models.Model):
 
     no_so = fields.Char(string='Sales Order Number', store=True, required=True)
 
-    local_commitment_date = fields.Char(string="Local Commitment Date", compute="_compute_local_commitment_date")
+    local_commitment_date = fields.Datetime(string="Local Commitment Date", compute="_compute_local_commitment_date")
 
     def _compute_local_commitment_date(self):
         for order in self:
