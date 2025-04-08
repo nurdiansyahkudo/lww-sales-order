@@ -44,6 +44,17 @@
             file="lww_sales.pratama_so_template"
             print_report_name="'Sales Order - %s' % (object.no_so)"
         />
+        
+        <!-- IMADEA MAGKASAMA -->
+        <report
+            id="imadea_sales_report"
+            model="sale.order"
+            string="Sales Order"
+            report_type="qweb-pdf"
+            name="lww_sales.imadea_so_template"
+            file="lww_sales.imadea_so_template"
+            print_report_name="'Sales Order - %s' % (object.no_so)"
+        />
 
         <!-- PAPERFORMAT POTRAIT -->
         <record id="paperformat_portrait" model="report.paperformat">
@@ -121,6 +132,20 @@
             <field name="model">sale.order</field>
             <field name="report_name">lww_sales.pratama_so_template</field>
             <field name="report_file">lww_sales.pratama_so_template</field>
+            <field name="print_report_name">(object.get_sales_report_name())</field>
+            <field name="attachment"/>
+            <field name="report_type">qweb-pdf</field>
+            <field name="binding_model_id" ref="sale.model_sale_order"/>
+            <field name="binding_type">report</field>
+            <field name="paperformat_id" ref="lww_sales.paperformat_portrait"/>
+        </record>
+        
+        <!-- IMADEA MAGKASAMA -->
+        <record id="action_report_imadea_so" model="ir.actions.report">
+            <field name="name">Print SO Imadea</field>
+            <field name="model">sale.order</field>
+            <field name="report_name">lww_sales.imadea_so_template</field>
+            <field name="report_file">lww_sales.imadea_so_template</field>
             <field name="print_report_name">(object.get_sales_report_name())</field>
             <field name="attachment"/>
             <field name="report_type">qweb-pdf</field>

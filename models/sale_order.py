@@ -15,6 +15,8 @@ class SaleOrder(models.Model):
             return self.env.ref('lww_sales.action_report_spartadua_so').report_action(self)
         elif company.name == 'PT. PRATAMA DATAMAKSIMA':
             return self.env.ref('lww_sales.action_report_pratama_so').report_action(self)
+        elif company.name == 'PT. IMADEA MAGKASAMA':
+            return self.env.ref('lww_sales.action_report_imadea_so').report_action(self)
         else:
             return self.env.ref('lww_sales.action_report_limawira_so').report_action(self)
 
