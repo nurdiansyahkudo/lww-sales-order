@@ -48,10 +48,10 @@
                                             <p style='text-align: left; font-size: 16px;'><strong>Customer Address </strong></p>
                                         </div>
                                         <div class='col-8' style='font-size: 16px; border: 1px; text-align: right'>
-                                            <span t-esc="(o.partner_id.parent_id.street or o.partner_id.street) if (o.partner_id.parent_id.street or o.partner_id.street) else ''"/>
-                                            <span t-esc="' ' + (o.partner_id.parent_id.city or o.partner_id.city) if (o.partner_id.parent_id.city or o.partner_id.city) else ''"/>
-                                            <span t-esc="' ' + (o.partner_id.parent_id.state_id.name or o.partner_id.state_id.name) if (o.partner_id.parent_id.state_id.name or o.partner_id.state_id.name) else ''"/>
-                                            <span t-esc="' ' + (o.partner_id.parent_id.country_id.name or o.partner_id.country_id.name) if (o.partner_id.parent_id.country_id.name or o.partner_id.country_id.name) else ''"/>
+                                            <span t-esc="(o.partner_id.parent_id.street or o.partner_id.street) if (o.partner_id.parent_id.street or o.partner_id.street) else ''"/>,
+                                            <span t-esc="' ' + (o.partner_id.parent_id.city or o.partner_id.city) if (o.partner_id.parent_id.city or o.partner_id.city) else ''"/>,
+                                            <span t-esc="' ' + (o.partner_id.parent_id.state_id.name or o.partner_id.state_id.name) if (o.partner_id.parent_id.state_id.name or o.partner_id.state_id.name) else ''"/> - 
+                                            <span t-esc="' ' + (o.partner_id.parent_id.zip or o.partner_id.zip) if (o.partner_id.parent_id.zip or o.partner_id.zip) else ''"/>
                                         </div>
                                     </div>
                                     <div class='row'>
