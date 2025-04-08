@@ -169,12 +169,7 @@
                                                 <!-- Item Name -->
                                                     <td class="text-center" style="font-size: 15px;"><span t-esc="line.product_id.name or ''" style="font-size: 15px;"/></td>
                                                 <!-- Description -->
-                                                    <!-- <td class="text-center" style="font-size: 15px;"><span t-esc="line.note or ''" style="font-size: 15px;"/></td> -->
-                                                    <t t-if="line.display_type == 'line_note'">
-                                                        <td name="td_note_line" colspan="99">
-                                                            <span t-field="line.name">A note, whose content usually applies to the section or product above.</span>
-                                                        </td>
-                                                    </t>
+                                                    <td class="text-center" style="font-size: 15px;"><span t-esc="line.name or ''" style="font-size: 15px;"/></td>
                                                 <!-- Unit Price -->
                                                     <td class="text-right" style="font-size: 15px; text-align: right;"><span t-esc="'{:,.2f}'.format(line.price_unit) or ''" style="font-size: 15px; text-align: right;"/></td>
                                                 <!-- QTY -->
