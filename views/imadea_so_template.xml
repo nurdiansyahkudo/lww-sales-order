@@ -175,7 +175,7 @@
                                                 <!-- QTY -->
                                                     <td class="text-center" style="font-size: 15px;"><span t-esc="int(line.product_uom_qty) or ''" style="font-size: 15px;"/></td>
                                                 <!-- Subtotal -->
-                                                    <td class="text-right" style="font-size: 15px; text-align: rigitght;"><span t-esc="'{:,.2f}'.format(line.price_subtotal) or ''"  style="font-size: 15px; text-align: right;"/></td>
+                                                    <td class="text-right" style="font-size: 15px; text-align: right;"><span t-esc="'{:,.2f}'.format(line.price_subtotal) or ''"  style="font-size: 15px; text-align: right;"/></td>
                                                 </tr>
                                             </t>
                                         </t>
