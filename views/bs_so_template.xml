@@ -1,8 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<odoo>
-    <data>
-        <!-- Template for Kwitansi -->
-        <template id="bs_so_template">
+<t t-name="lww_sales.bs_so_template">
             <t t-call="web.external_layout">
                 <t t-foreach="docs" t-as="o">
                     <!-- Header Section -->
@@ -24,19 +20,19 @@
                             </div>
                         </div>
                         <div class="col-4">
-                            <div class='row' style="padding-top: 70px;">
-                                <div class='col-3'>
-                                    <p style='text-align: left; font-size: 14px;'>NO</p>
+                            <div class="row" style="padding-top: 70px;">
+                                <div class="col-3">
+                                    <p style="text-align: left; font-size: 14px;">NO</p>
                                 </div>
-                                <div class='col-9' style='font-size: 14px; border: 1px;'>
+                                <div class="col-9" style="font-size: 14px; border: 1px;">
                                     : <span t-esc="(o.name + ' ' + o.no_so) if o.name and o.no_so else (o.name or o.no_so or '')"/>
                                 </div>
                             </div>
-                            <div class='row'>
-                                <div class='col-3'>
-                                    <p style='text-align: left; font-size: 14px;'>Date</p>
+                            <div class="row">
+                                <div class="col-3">
+                                    <p style="text-align: left; font-size: 14px;">Date</p>
                                 </div>
-                                <div class='col-9' style='font-size: 14px; border: 1px;'>
+                                <div class="col-9" style="font-size: 14px; border: 1px;">
                                     : <span t-esc="o.date_order.strftime('%d-%b-%y') or ''" style="font-size: 15px;"/>
                                 </div>
                             </div>
@@ -102,16 +98,16 @@
                             <!-- Delivery Place Section -->
                             <div class="row" style="margin-bottom: 5px; margin-top: 10px; font-size: 14px;">
                                 <table class="table table-sm" style="margin-bottom: 5px; border: 1px solid;">
+                                        <tr>
+                                            <!-- <td class="col-3" style="border: 1px solid; border-bottom: none;">
+                                                &amp;nbsp;Delivery Place
+                                            </td> -->
+                                            <td colspan="3" style="border: 2px solid; border-bottom: none;">
+                                                <span t-esc="o.company_id.name or '-'" style="text-align: left; font-size: 14px; margin-left: 5px;"/>
+                                            </td>
+                                        </tr>
                                     <tr>
-                                        <td class="col-3" style="border: 1px solid; border-bottom: none;">
-                                            &amp;nbsp;Delivery Place
-                                        </td>
-                                        <td colspan="3" style="border: 2px solid; border-bottom: none;">
-                                            <span t-esc="o.company_id.name or '-'" style="text-align: left; font-size: 14px; margin-left: 5px;"/>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="col-3" style="border: 1px solid; border-top: none;"></td>
+                                        <!-- <td class="col-3" style="border: 1px solid; border-top: none;"/> -->
                                         <td class="col-3" style="border: 2px solid; border-top: none; border-right: none;">
                                             Phone <span t-esc="o.company_id.phone"/>  
                                         </td>
@@ -145,17 +141,11 @@
                                         <t t-set="counter" t-value="0"/>
                                         <t t-foreach="lines_to_report" t-as="line">
                                             <t t-set="counter" t-value="counter + 1"/>
-                                            <tr t-att-class="'fw-bold o_line_section' if (
-                                                        line.display_type == 'line_section'
-                                                        or line.product_type == 'combo'
-                                                    )
-                                                    else 'fst-italic o_line_note' if line.display_type == 'line_note'
-                                                    else ''"
-                                            >
+                                            <tr t-att-class="'fw-bold o_line_section' if (                                                         line.display_type == 'line_section'                                                         or line.product_type == 'combo'                                                     )                                                     else 'fst-italic o_line_note' if line.display_type == 'line_note'                                                     else ''">
                                             <!-- No -->
                                                 <td class="text-center" style="font-weight: bold;"><span t-esc="counter" style="font-weight: bold; text-align: center;"/></td>
                                             <!-- Part Number -->
-                                                <td class="text-center" style="font-size: 15px;"><span t-esc="line.name or ''" style="font-size: 15px;"/></td>
+                                                <td class="text-center" style="font-size: 15px;"><span t-esc="line.product_template_id.default_code or ''" style="font-size: 15px;"/></td>
                                             <!-- Product Name -->
                                                 <td class="text-center" style="font-size: 15px;"><span t-esc="line.name or ''" style="font-size: 15px;"/></td>
                                             <!-- QTY -->
@@ -169,15 +159,30 @@
                                             <!-- Currency -->
                                                 <td class="text-center" style="font-size: 15px;"><span t-esc="o.currency_id.name or ''" style="font-size: 15px;"/></td>
                                             <!-- Total -->
-                                                <td class="text-right" style="font-size: 15px; text-align: right;"><span t-esc="'{:,.2f}'.format(line.price_subtotal) or ''"  style="font-size: 15px; text-align: right;"/></td>
+                                                <td class="text-right" style="font-size: 15px; text-align: right;"><span t-esc="'{:,.2f}'.format(line.price_subtotal) or ''" style="font-size: 15px; text-align: right;"/></td>
                                             </tr>
                                         </t>
                                     </tbody>
                                 </table>
                             </div>
-                            <div class='row' style="margin-bottom: 5px; margin-top: 5px;">
+
+                        <!-- <div style="page-break-after:auto;"> -->
+                            <!-- Total Section -->
+                            <div class="row" style="margin-bottom: 3px; margin-top: 5px;">
+                                <div class="col-7"></div>
+                                <div class="col-5">
+                                    <p style="font-size: 16px; text-align: right; margin-bottom: 5px; line-height: 1.2;"><span style="float: left;">Untaxed Amount</span> <span t-esc="'{:,.2f}'.format(o.amount_untaxed + o.amount_discount)"/></p>
+                                    <p style="font-size: 16px; text-align: right; margin-bottom: 5px; line-height: 1.2;"><span style="float: left;">Discount</span> <span t-esc="'{:,.2f}'.format(o.amount_discount)"/></p>
+                                    <p style="font-size: 16px; text-align: right; margin-bottom: 5px; line-height: 1.2;"><span style="float: left;">Total</span> <span t-esc="'{:,.2f}'.format(o.amount_untaxed)"/></p>
+                                    <p style="font-size: 16px; text-align: right; margin-bottom: 5px; line-height: 1.2;"><span style="float: left;">Tax Base Amount</span> <span t-esc="'{:,.2f}'.format(o.amount_untaxed * 11/12)"/></p>
+                                    <p style="font-size: 16px; text-align: right; margin-bottom: 5px; line-height: 1.2;"><span style="float: left;">Taxes 12%</span> <span t-esc="'{:,.2f}'.format(o.amount_tax)"/></p>
+                                    <p style="font-size: 16px; text-align: right; margin-bottom: 5px; line-height: 1.2;"><span style= " font-weight: bold; float: left;">Grand Total</span> <span t-esc="'{:,.2f}'.format(o.amount_total)"/></p>
+                                </div>
+                            </div>
+
+                            <!-- <div class="row" style="margin-bottom: 5px; margin-top: 5px;">
                                 <div class="col-10">
-                                    <p style='text-align: right; font-size: 16px;'><em style="font-weight: bold;">Sub Total: </em></p>
+                                    <p style="text-align: right; font-size: 16px;"><em style="font-weight: bold;">Sub Total: </em></p>
                                 </div>
                                 <div class="col-2">
                                     <p style="font-size: 16px; text-align: right;">
@@ -185,25 +190,25 @@
                                     </p>
                                 </div>
                             </div>
-                            <div class='row' style="margin-bottom: 5px; margin-top: 5px;">
+                            <div class="row" style="margin-bottom: 5px; margin-top: 5px;">
                                 <div class="col-5">
-                                    <p style='text-align: right; font-size: 16px;'><em style="font-weight: bold;">VAT </em></p>
+                                    <p style="text-align: right; font-size: 16px;"><em style="font-weight: bold;">VAT </em></p>
                                 </div>
-                                <div class="col-5"></div>
+                                <div class="col-5"/>
                                 <div class="col-2">
                                     <p style="font-size: 16px; text-align: right;">
                                       <span t-esc="'{:,.2f}'.format(o.amount_tax)" style="font-size: 16px; text-align: right;"/>
                                     </p>
                                 </div>
                             </div>
-                            <div class='row' style="margin-bottom: 10px; margin-top: 5px;">
+                            <div class="row" style="margin-bottom: 10px; margin-top: 5px;">
                                 <div class="col-5">
-                                    <p style='text-align: right; font-size: 16px;'><em style="font-weight: bold;">Summary </em></p>
+                                    <p style="text-align: right; font-size: 16px;"><em style="font-weight: bold;">Summary </em></p>
                                 </div>
-                                <div class="col-4"></div>
-                                <div class="col-1">
+                                <div class="col-4"/>
+                                <div class="col-1"> -->
                                 <!-- Currency -->
-                                    <p style="font-size: 16px; text-align: left; font-weight: bold;">
+                                    <!-- <p style="font-size: 16px; text-align: left; font-weight: bold;">
                                       <span t-esc="o.currency_id.name or ''" style="font-size: 16px; text-align: right;"/>
                                     </p>
                                 </div>
@@ -212,15 +217,15 @@
                                       <span t-esc="'{:,.2f}'.format(o.amount_total)" style="font-size: 16px; text-align: right;"/>
                                     </p>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- Note Section -->
                             <div class="row" style="margin-bottom: 10px; margin-top: 10px;">
                                 <div class="col-6 text-left">
-                                    <div class='row'>
-                                        <div class='col-3'>
-                                            <p style='text-align: right; font-size: 16px;'>NOTE : </p>
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <p style="text-align: right; font-size: 16px;">NOTE : </p>
                                         </div>
-                                        <div class='col-9' style='font-size: 16px; border: 1px; margin-left: 0.5rem;'>
+                                        <div class="col-9" style="font-size: 16px; border: 1px; margin-left: 0.5rem;">
                                             <span t-esc="o.note or ''"/>
                                         </div>
                                     </div>
@@ -230,20 +235,20 @@
                             <footer>
                             <!-- Signature Section -->
                                 <div class="row" style="margin-bottom: 10px; margin-top: 10px;">
-                                    <div class="col-5"></div>
+                                    <div class="col-5"/>
                                     <div class="col-7">
-                                        <div class='row'>
-                                            <div class='col-6'>
-                                                <p style='text-align: center; font-size: 16px;'>Prepared by, </p>
-                                                <p style='text-align: left; font-size: 16px;'>Name : </p>
-                                                <p style='text-align: left; font-size: 16px;'>Date : </p>
-                                                <p style="text-align: center; margin-top: 120px; border-bottom: 1px solid; width: 80%;"></p>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <p style="text-align: center; font-size: 16px;">Prepared by, </p>
+                                                <p style="text-align: left; font-size: 16px;">Name : </p>
+                                                <p style="text-align: left; font-size: 16px;">Date : </p>
+                                                <p style="text-align: center; margin-top: 120px; border-bottom: 1px solid; width: 80%;"/>
                                             </div>
-                                            <div class='col-6' style='font-size: 16px; margin-left: 0.5rem;'>
-                                                <p style='text-align: center; font-size: 16px;'>Approved by, </p>
-                                                <p style='text-align: left; font-size: 16px;'>Name : </p>
-                                                <p style='text-align: left; font-size: 16px;'>Date : </p>
-                                                <p style="text-align: center; margin-top: 120px; border-bottom: 1px solid; width: 80%;"></p>
+                                            <div class="col-6" style="font-size: 16px; margin-left: 0.5rem;">
+                                                <p style="text-align: center; font-size: 16px;">Approved by, </p>
+                                                <p style="text-align: left; font-size: 16px;">Name : </p>
+                                                <p style="text-align: left; font-size: 16px;">Date : </p>
+                                                <p style="text-align: center; margin-top: 120px; border-bottom: 1px solid; width: 80%;"/>
                                             </div>
                                         </div>
                                     </div>
@@ -253,15 +258,4 @@
                     </main>
                 </t>
             </t>
-        </template>
-
-        <!-- Wrapper Template -->
-        <template id="bs_so">
-            <t t-call="web.html_container">
-                <t t-foreach="docs" t-as="o">
-                    <t t-call="bs_so_template" t-lang="o.partner_id.lang"/>
-                </t>
-            </t>
-        </template>
-    </data>
-</odoo>
+        </t>

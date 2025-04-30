@@ -1,15 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-<odoo>
-    <data>
-        <!-- Template for Kwitansi -->
-        <template id="pratama_so_template">
+<t t-name="lww_sales.pratama_so_template">
             <t t-call="web.external_layout">
                 <t t-foreach="docs" t-as="o">
                     <!-- Header Section -->
                     <div class="row">
                         <div class="col-6">
-                            <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % o.company_id.logo.decode()" 
-                            style="max-width: 300px; height: auto;" />
+                            <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % o.company_id.logo.decode()" style="max-width: 300px; height: auto;"/>
                             <div style="font-size: 12px; line-height: 1.5; text-align: left;">
                                 <p>
                                     <span t-esc="o.company_id.street"/> <br/>
@@ -22,7 +17,7 @@
                         </div>
                     </div>
                     <div class="row" style="border-bottom: 2px solid #205295;">
-                        <div class="col-4"></div>
+                        <div class="col-4"/>
                         <div class="col-4" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
                             <h1 style="font-size: 26px; margin: 0; text-align: center">
                                <strong>SALES ORDER</strong>
@@ -44,29 +39,29 @@
                             <div style="margin-bottom: 10px; margin-top: 10px; border-bottom: 2px solid #205295">
                                 <div class="col-6 text-left">
                                     <strong style="font-size: 16px; margin-left: 0;">To: </strong>
-                                    <div class='row'>
-                                        <div class='col-12' style='font-size: 16px; border: 1px; padding-left: 0'>
-                                            <span t-esc='o.partner_id.name'/>
+                                    <div class="row">
+                                        <div class="col-12" style="font-size: 16px; border: 1px; padding-left: 0">
+                                            <span t-esc="o.partner_id.name"/>
                                         </div>
                                     </div>
-                                    <div class='row'>
-                                        <div class='col-12' style='font-size: 16px; border: 1px; padding-left: 0'>
-                                            <span t-esc='o.partner_id.street'/>
+                                    <div class="row">
+                                        <div class="col-12" style="font-size: 16px; border: 1px; padding-left: 0">
+                                            <span t-esc="o.partner_id.street"/>
                                         </div>
                                     </div>
-                                    <div class='row'>
-                                        <div class='col-12' style='font-size: 16px; border: 1px; padding-left: 0'>
-                                            <span t-esc='o.partner_id.city'/>
+                                    <div class="row">
+                                        <div class="col-12" style="font-size: 16px; border: 1px; padding-left: 0">
+                                            <span t-esc="o.partner_id.city"/>
                                         </div>
                                     </div>
-                                    <div class='row'>
-                                        <div class='col-12' style='font-size: 16px; border: 1px; padding-left: 0'><em>Telp. </em>
-                                            <span t-esc='o.partner_id.phone'/>
+                                    <div class="row">
+                                        <div class="col-12" style="font-size: 16px; border: 1px; padding-left: 0"><em>Telp. </em>
+                                            <span t-esc="o.partner_id.phone"/>
                                         </div>
                                     </div>
-                                    <div class='row'>
-                                        <div class='col-12' style='margin-bottom: 10px; font-size: 16px; border: 1px; padding-left: 0'>
-                                            <span t-esc='o.partner_id.mobile'/>
+                                    <div class="row">
+                                        <div class="col-12" style="margin-bottom: 10px; font-size: 16px; border: 1px; padding-left: 0">
+                                            <span t-esc="o.partner_id.mobile"/>
                                         </div>
                                     </div>
                                 </div>
@@ -92,13 +87,7 @@
                                         <t t-foreach="lines_to_report" t-as="line">
                                             <t t-if="not line.is_downpayment">
                                                 <t t-set="counter" t-value="counter + 1"/>
-                                                <tr t-att-class="'fw-bold o_line_section' if (
-                                                        line.display_type == 'line_section'
-                                                        or line.product_type == 'combo'
-                                                    )
-                                                    else 'fst-italic o_line_note' if line.display_type == 'line_note'
-                                                    else ''"
-                                                >
+                                                <tr t-att-class="'fw-bold o_line_section' if (                                                         line.display_type == 'line_section'                                                         or line.product_type == 'combo'                                                     )                                                     else 'fst-italic o_line_note' if line.display_type == 'line_note'                                                     else ''">
                                                 <!-- No -->
                                                     <td class="text-center" style="font-weight: bold;"><span t-esc="counter" style="font-weight: bold; text-align: center;"/></td>
                                                 <!-- Product Name -->
@@ -114,7 +103,7 @@
                                                 <!-- Currency -->
                                                     <td class="text-center" style="font-size: 15px;"><span t-esc="o.currency_id.name or ''" style="font-size: 15px;"/></td>
                                                 <!-- Total -->
-                                                    <td class="text-right" style="font-size: 15px; text-align: right;"><span t-esc="'{:,.2f}'.format(line.price_subtotal) or ''"  style="font-size: 15px; text-align: right;"/></td>
+                                                    <td class="text-right" style="font-size: 15px; text-align: right;"><span t-esc="'{:,.2f}'.format(line.price_subtotal) or ''" style="font-size: 15px; text-align: right;"/></td>
                                                 </tr>
                                             </t>
                                         </t>
@@ -123,9 +112,9 @@
                             </div>
 
                             <!-- Sub Total dst. -->
-                            <div class='row' style="text-align: right;">
-                                <div class="col-3"></div>
-                                <div class="col-3"></div>
+                            <div class="row" style="text-align: right;">
+                                <div class="col-3"/>
+                                <div class="col-3"/>
 
                                 <div class="col-3" style="text-align: right">
                                     <div class="row justify-content-end">
@@ -178,15 +167,15 @@
                                 <!-- Note Section -->
                                 <div class="row" style="margin-top: 5px; margin-bottom: 5px; border-top: 2px solid #205295; padding-top: 5px;">
                                     <div class="col-12 d-flex align-items-center">
-                                        <p style='font-size: 16px; margin-right: 10px; margin-bottom: 0;'>Syarat dan Ketentuan : </p>
+                                        <p style="font-size: 16px; margin-right: 10px; margin-bottom: 0;">Syarat dan Ketentuan : </p>
                                     </div>
                                 </div>
-                                <div class="col-3">
+                                <div class="col-12">
                                     <span t-esc="o.note or ''"/>
                                 </div>
                                 <!-- Signature Section -->
                                 <div class="row" style="margin-bottom: 20px; margin-top: 20px;">
-                                    <div class="col-6"></div>
+                                    <div class="col-6"/>
                                     <div class="col-6" style="border: 2px solid black; padding: 0;">
                                         <div class="row" style="margin: 0;">
                                             <!-- Kotak TTD Pertama -->
@@ -207,15 +196,4 @@
                     </main>
                 </t>
             </t>
-        </template>
-
-        <!-- Wrapper Template -->
-        <template id="pratama_so">
-            <t t-call="web.html_container">
-                <t t-foreach="docs" t-as="o">
-                    <t t-call="pratama_so_template" t-lang="o.partner_id.lang"/>
-                </t>
-            </t>
-        </template>
-    </data>
-</odoo>
+        </t>
